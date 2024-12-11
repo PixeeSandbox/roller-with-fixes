@@ -16,6 +16,7 @@
 
 package org.apache.roller.weblogger.planet.ui;
 
+import static io.github.pixee.security.Newlines.stripNewLines;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -97,7 +98,7 @@ public class PlanetGroupSubs extends PlanetUIAction implements ServletRequestAwa
                 planetGroup = pmgr.getGroup(planet, "all");
             }
         } catch (Exception ex) {
-            log.error("Error " + action, ex);
+            log.error("Error " + stripNewLines(action), ex);
         }
         return planetGroup;
     }

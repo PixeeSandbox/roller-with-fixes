@@ -17,6 +17,7 @@
  */
 package org.apache.roller.weblogger.business.jpa;
 
+import static io.github.pixee.security.Newlines.stripNewLines;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -369,7 +370,7 @@ public class JPAMediaFileManagerImpl implements MediaFileManager {
 
             } catch (Exception e) {
                 if (log.isDebugEnabled()) {
-                    log.debug("Cannot load thumbnail for image " + id, e);
+                    log.debug("Cannot load thumbnail for image " + stripNewLines(id), e);
                 } else {
                     log.warn("Cannot load thumbnail for image " + id);
                 }
