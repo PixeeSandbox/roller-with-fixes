@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.rendering.util;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -92,7 +91,7 @@ public class WeblogPreviewResourceRequest extends WeblogResourceRequest {
             } catch(ThemeNotFoundException tnfe) {
                 // bogus theme specified ... don't worry about it
             } catch(WebloggerException re) {
-                log.error("Error looking up theme "+stripNewLines(themeName), re);
+                log.error("Error looking up theme "+themeName, re);
             }
         }
         

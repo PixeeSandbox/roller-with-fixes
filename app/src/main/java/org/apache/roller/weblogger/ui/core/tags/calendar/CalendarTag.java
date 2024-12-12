@@ -35,7 +35,6 @@ import java.util.StringTokenizer;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.Tag;
 import javax.servlet.jsp.tagext.TagSupport;
-import org.owasp.encoder.Encode;
 
 
 /**
@@ -274,14 +273,14 @@ public class CalendarTag extends TagSupport {
         if ( content!=null ) {
             pw.print("<td class=\"hCalendarDayCurrent"
                     +mClassSuffix+"\">");
-            pw.print( Encode.forHtml(content) );
+            pw.print( content );
             pw.print("</td>");
         } else if (url!=null) {
             pw.print("<td class=\"hCalendarDayLinked"
                     +mClassSuffix+"\">");
             pw.print("<div class=\"hCalendarDayTitle"
                     +mClassSuffix+"\">");
-            pw.print("<a href=\""+Encode.forHtml(url)+"\">");
+            pw.print("<a href=\""+url+"\">");
             pw.print(cal.get(Calendar.DAY_OF_MONTH));
             pw.print("</a></div>");
             pw.print("</td>");
@@ -300,7 +299,7 @@ public class CalendarTag extends TagSupport {
         if ( content!=null ) {
             pw.print("<td class=\"hCalendarDayCurrent"
                     +mClassSuffix+"\">");
-            pw.print( Encode.forHtml(content) );
+            pw.print( content );
             pw.print("</td>");
         } else if (url!=null) {
             pw.print("<td class=\"hCalendarDayCurrent"

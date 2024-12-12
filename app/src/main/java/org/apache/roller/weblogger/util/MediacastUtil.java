@@ -18,8 +18,6 @@
 
 package org.apache.roller.weblogger.util;
 
-import io.github.pixee.security.HostValidator;
-import io.github.pixee.security.Urls;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -56,7 +54,7 @@ public final class MediacastUtil {
         
         MediacastResource resource = null;
         try {
-            HttpURLConnection con = (HttpURLConnection) Urls.create(url, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS).openConnection();
+            HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
             con.setRequestMethod("HEAD");
             int response = con.getResponseCode();
             String message = con.getResponseMessage();

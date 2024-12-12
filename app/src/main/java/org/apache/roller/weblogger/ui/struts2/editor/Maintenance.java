@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.editor;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.util.Date;
 
 import org.apache.commons.logging.Log;
@@ -90,7 +89,7 @@ public class Maintenance extends UIAction {
             addMessage("maintenance.message.flushed");
 
         } catch (Exception ex) {
-            log.error("Error saving weblog - " + stripNewLines(getActionWeblog().getHandle()),
+            log.error("Error saving weblog - " + getActionWeblog().getHandle(),
                     ex);
             addError("Error flushing page cache");
         }
@@ -123,7 +122,7 @@ public class Maintenance extends UIAction {
             addMessage("maintenance.message.reset");
 
         } catch (Exception ex) {
-            log.error("Error saving weblog - " + stripNewLines(getActionWeblog().getHandle()),
+            log.error("Error saving weblog - " + getActionWeblog().getHandle(),
                     ex);
             addError("Error flushing page cache");
         }

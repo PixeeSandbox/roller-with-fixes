@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.pojos;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.io.Serializable;
 import java.util.*;
 
@@ -160,7 +159,7 @@ public class Weblog implements Serializable {
             ThemeManager themeMgr = WebloggerFactory.getWeblogger().getThemeManager();
             return themeMgr.getTheme(this);
         } catch (WebloggerException ex) {
-            log.error("Error getting theme for weblog - "+stripNewLines(getHandle()), ex);
+            log.error("Error getting theme for weblog - "+getHandle(), ex);
         }
         
         // TODO: maybe we should return a default theme in this case?
@@ -627,7 +626,7 @@ public class Weblog implements Serializable {
                 category = getWeblogCategories().iterator().next();
             }
         } catch (WebloggerException e) {
-            log.error("ERROR: fetching category: " + stripNewLines(categoryName), e);
+            log.error("ERROR: fetching category: " + categoryName, e);
         }
         return category;
     }

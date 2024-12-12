@@ -591,15 +591,8 @@ limitations under the License.
             <version>5.0.1</version>
             <scope>test</scope>
         </dependency>
-  <dependency>
-   <groupId>org.owasp.encoder</groupId>
-   <artifactId>encoder</artifactId>
-  </dependency>
-  <dependency>
-   <groupId>io.github.pixee</groupId>
-   <artifactId>java-security-toolkit</artifactId>
-  </dependency>
- </dependencies>
+
+    </dependencies>
 
     <build>
 

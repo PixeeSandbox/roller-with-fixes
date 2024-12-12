@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.editor;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.util.Collections;
 import java.util.List;
 import org.apache.commons.logging.Log;
@@ -74,7 +73,7 @@ public class MemberResign extends UIAction {
             WebloggerFactory.getWeblogger().flush();
             addMessage("yourWebsites.resigned", getWeblog());
         } catch (WebloggerException ex) {
-            log.error("Error doing weblog resign - " + stripNewLines(getActionWeblog().getHandle()), ex);
+            log.error("Error doing weblog resign - " + getActionWeblog().getHandle(), ex);
             addError("Resignation failed - check system logs");
         }
         return SUCCESS;

@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.editor;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -126,7 +125,7 @@ public class CategoryRemove extends UIAction {
                 addMessage("categoryForm.removed", category.getName());
                 return SUCCESS;
             } catch(Exception ex) {
-                log.error("Error removing category - " + stripNewLines(getRemoveId()), ex);
+                log.error("Error removing category - " + getRemoveId(), ex);
                 addError("generic.error.check.logs");
             }
         }

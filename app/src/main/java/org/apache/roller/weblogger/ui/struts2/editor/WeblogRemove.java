@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.editor;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.roller.weblogger.business.WebloggerFactory;
@@ -66,7 +65,7 @@ public class WeblogRemove extends UIAction {
 
             return SUCCESS;
         } catch (Exception ex) {
-            log.error("Error removing weblog - " + stripNewLines(getActionWeblog().getHandle()), ex);
+            log.error("Error removing weblog - " + getActionWeblog().getHandle(), ex);
             addError("websiteRemove.error", getActionWeblog().getName());
         }
 

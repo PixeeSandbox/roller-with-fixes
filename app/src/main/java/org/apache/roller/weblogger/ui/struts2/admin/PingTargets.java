@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.admin;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.util.Collections;
 import java.util.List;
 
@@ -84,7 +83,7 @@ public class PingTargets extends UIAction {
                 PingTargetManager pingTargetMgr = WebloggerFactory.getWeblogger().getPingTargetManager();
                 setPingTarget(pingTargetMgr.getPingTarget(getPingTargetId()));
             } catch (WebloggerException ex) {
-                log.error("Error looking up ping target - " + stripNewLines(getPingTargetId()), ex);
+                log.error("Error looking up ping target - " + getPingTargetId(), ex);
             }
         }
     }
@@ -175,7 +174,7 @@ public class PingTargets extends UIAction {
                 getPingTargets().remove(getPingTarget());
                 addMessage("pingTarget.deleted", getPingTarget().getName());
             } catch (WebloggerException ex) {
-                log.error("Error deleting ping target - " + stripNewLines(getPingTargetId()), ex);
+                log.error("Error deleting ping target - " + getPingTargetId(), ex);
                 addError("generic.error.check.logs", getPingTargetId());
             }
         } else {

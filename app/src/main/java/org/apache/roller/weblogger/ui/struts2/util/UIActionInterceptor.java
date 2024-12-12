@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.util;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
@@ -82,7 +81,7 @@ public class UIActionInterceptor extends MethodFilterInterceptor implements
                     }
                 } catch (Exception e) {
                     log.error("Error looking up action weblog - "
-                            + stripNewLines(weblogHandle), e);
+                            + weblogHandle, e);
                 }
             }
         }

@@ -17,7 +17,6 @@
  */
 package org.apache.roller.weblogger.ui.struts2.editor;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.io.File;
 import java.io.FileInputStream;
 
@@ -103,7 +102,7 @@ public class MediaFileEdit extends MediaFileBase {
             addError("uploadFiles.error.upload", bean.getName());
 
         } catch (Exception e) {
-            log.error("Error uploading file " + stripNewLines(bean.getName()), e);
+            log.error("Error uploading file " + bean.getName(), e);
             addError("uploadFiles.error.upload", bean.getName());
         }
 
@@ -150,7 +149,7 @@ public class MediaFileEdit extends MediaFileBase {
                 addError("uploadFiles.error.upload", bean.getName());
 
             } catch (Exception e) {
-                log.error("Error uploading file " + stripNewLines(bean.getName()), e);
+                log.error("Error uploading file " + bean.getName(), e);
                 addError("uploadFiles.error.upload", bean.getName());
             }
 

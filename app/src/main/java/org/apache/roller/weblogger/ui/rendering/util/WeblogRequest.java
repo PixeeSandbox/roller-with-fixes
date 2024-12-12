@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.rendering.util;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
@@ -189,7 +188,7 @@ public class WeblogRequest extends ParsedRequest {
                 weblog = WebloggerFactory.getWeblogger().getWeblogManager()
                         .getWeblogByHandle(weblogHandle, Boolean.TRUE);
             } catch (WebloggerException ex) {
-                log.error("Error looking up weblog "+stripNewLines(weblogHandle), ex);
+                log.error("Error looking up weblog "+weblogHandle, ex);
             }
         }
         

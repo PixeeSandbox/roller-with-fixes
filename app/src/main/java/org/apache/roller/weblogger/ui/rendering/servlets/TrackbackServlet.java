@@ -144,6 +144,7 @@ public class TrackbackServlet extends HttpServlet {
         }
         
         if (error != null) {
+            pw.println(this.getErrorResponse(error));
             return;
         }
         
@@ -217,7 +218,8 @@ public class TrackbackServlet extends HttpServlet {
         }
         
         if(error!= null) {
-}
+            pw.println(this.getErrorResponse(error));
+        }
         
     }
     

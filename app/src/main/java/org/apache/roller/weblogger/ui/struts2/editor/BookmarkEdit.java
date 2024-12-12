@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.editor;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -79,7 +78,7 @@ public class BookmarkEdit extends UIAction {
                 bookmark = bmgr.getBookmark(getBean().getId());
             } catch (WebloggerException ex) {
                 addError("generic.error.check.logs");
-                log.error("Error looking up bookmark" + stripNewLines(getBean().getId()), ex);
+                log.error("Error looking up bookmark" + getBean().getId(), ex);
             }
         }
     }

@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.core;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.util.TimeZone;
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
@@ -285,7 +284,7 @@ public class Register extends UIAction implements ServletRequestAware {
 		        // send activation mail to the user
 		        MailUtil.sendUserActivationEmail(ud);
 		    } catch (WebloggerException ex) {
-		        log.error("Error sending activation email to - " + stripNewLines(ud.getEmailAddress()), ex);
+		        log.error("Error sending activation email to - " + ud.getEmailAddress(), ex);
 		    }
 
 		    setActivationStatus("pending");

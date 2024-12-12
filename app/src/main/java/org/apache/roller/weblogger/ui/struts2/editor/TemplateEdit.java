@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.editor;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -61,7 +60,7 @@ public class TemplateEdit extends UIAction {
         try {
             setTemplate(WebloggerFactory.getWeblogger().getWeblogManager().getTemplate(getBean().getId()));
         } catch (WebloggerException ex) {
-            log.error("Error looking up template - " + stripNewLines(getBean().getId()), ex);
+            log.error("Error looking up template - " + getBean().getId(), ex);
         }
     }
 
@@ -89,7 +88,7 @@ public class TemplateEdit extends UIAction {
             }
 
         } catch (WebloggerException ex) {
-           log.error("Error updating page - " + stripNewLines(getBean().getId()), ex);
+           log.error("Error updating page - " + getBean().getId(), ex);
            addError("Error saving template - check Roller logs");
         }
 
@@ -138,7 +137,7 @@ public class TemplateEdit extends UIAction {
                 addMessage("pageForm.save.success", templateToSave.getName());
 
             } catch (Exception ex) {
-                log.error("Error updating page - " + stripNewLines(getBean().getId()), ex);
+                log.error("Error updating page - " + getBean().getId(), ex);
                 addError("Error updating template - check Roller logs");
             }
         }

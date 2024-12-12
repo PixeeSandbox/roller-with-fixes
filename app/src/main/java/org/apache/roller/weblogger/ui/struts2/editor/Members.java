@@ -18,7 +18,6 @@
 
 package org.apache.roller.weblogger.ui.struts2.editor;
 
-import static io.github.pixee.security.Newlines.stripNewLines;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -139,7 +138,7 @@ public class Members extends UIAction implements HttpParametersAware {
             }
             
         } catch (Exception ex) {
-            log.error("Error saving permissions on weblog - "+stripNewLines(getActionWeblog().getHandle()), ex);
+            log.error("Error saving permissions on weblog - "+getActionWeblog().getHandle(), ex);
             addError("memberPermissions.saveError");
         }
         
